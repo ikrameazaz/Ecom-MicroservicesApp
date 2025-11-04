@@ -5,6 +5,7 @@ import org.sid.inventoryservice.entities.Product;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 
 import java.util.UUID;
 
@@ -15,6 +16,8 @@ public class InventoryServiceApplication {
         SpringApplication.run(InventoryServiceApplication.class, args);
     }
 
+
+    @Bean
     CommandLineRunner commandLineRunner (ProductRepository productRepository){
         return args -> {
             productRepository.save(Product.builder().id(UUID.randomUUID().toString()).name("PC").price(6000).quantity(10).build());
