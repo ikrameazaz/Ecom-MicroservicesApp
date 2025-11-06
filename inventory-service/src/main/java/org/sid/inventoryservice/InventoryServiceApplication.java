@@ -25,7 +25,6 @@ public class InventoryServiceApplication {
 
             productRepository.findAll().forEach(c -> System.out.println(c.toString()));
 
-
         };
     }
 
